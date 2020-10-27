@@ -1,0 +1,39 @@
+
+
+@font-face {
+  font-family: "Public Sans";
+  src: url('/assets/webfonts/PublicSans-VariableFont.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  src: url('/assets/webfonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+  font-display: swap;
+}
+
+ @font-face {
+  font-family: "Josefin Sans";
+  src: url('/assets/webfonts/JosefinSans-VariableFont.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('/webfonts/Bitter-VariableFont.ttf') format('truetype');
+  font-display: swap;
+  
+}
+
+@font-face {
+  font-family: "HeptaSlab-VF";
+  src: url('/webfonts/HeptaSlab-VF.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url('/assets/webfonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+  font-display: swap;
+}
