@@ -12,30 +12,30 @@ const search_container = document.querySelector('.search-container');
 const search_wrapper = document.querySelector('.search-wrapper');
 const search_form = document.querySelector('.search-form');
 const myForm = document.querySelector('#cnt-form');
-console.log(myForm);
+
 /* -- watch for width changing -- */
 document.addEventListener('DOMContentLoaded', () => {
   let result = new ResizeObserver(move);
   result.observe(body);
 });
 
-/* move the logo */
+/* move elements*/
 function move() {
   for (let ls of list)
-  if (body.clientWidth >= 630) {
-    header.insertAdjacentElement('afterbegin', logo) &&
-    mainNavList.insertAdjacentElement('beforeend', ls)&&
-    header.insertAdjacentElement('beforeend', search_form);
-  } else {
-    mb_header.insertAdjacentElement('afterbegin', logo) &&
-    mobile_menu_container.insertAdjacentElement('afterbegin', ls)&&
-    search_wrapper.insertAdjacentElement('afterbegin', search_form);
-  }
+    if (body.clientWidth >= 630) {
+      header.insertAdjacentElement('afterbegin', logo) &&
+      mainNavList.insertAdjacentElement('beforeend', ls) &&
+      header.insertAdjacentElement('beforeend', search_form);
+    } else {
+      mb_header.insertAdjacentElement('afterbegin', logo) &&
+      mobile_menu_container.insertAdjacentElement('afterbegin', ls) &&
+      search_wrapper.insertAdjacentElement('afterbegin', search_form);
+    }
 };
 
 /*  stop from closing the form when click inside */
 search_form.addEventListener('click', (e) => {
-    e.stopPropagation();
+  e.stopPropagation();
 });
 
 
@@ -49,23 +49,23 @@ document.addEventListener("click", event => {
   if (!wasOpen && event.target.matches(".mb-menu a") && body.clientWidth <= 630) {
     event.target.nextElementSibling.classList.toggle("open");
   }
- /*  console.log(event.target); */
+  /*  console.log(event.target); */
 });
 
 
 // Submit Form
 
-myForm.addEventListener( 'submit',  (e)  => {
+myForm.addEventListener('submit', (e) => {
 
-    e.preventDefault();
-    console.log('form has submitted');
-    
-
-    let request = new XMLHttpRequest();
-    request.open('post', 'admin-ajax.php' );
+  e.preventDefault();
+  console.log('form has submitted');
 
 
-    request.send(new FormData(myForm));
-    console.log(request);
-    
+  let request = new XMLHttpRequest();
+  request.open('post', 'ajaxurl', true);
+  console.log(request);
+
+  request.send(new FormData(myForm));
+  console.log(request);
+
 });

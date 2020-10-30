@@ -10,7 +10,7 @@
             
         </div>
 
-        <form id="cnt-form" class="cnt-form" action="#" method="post">
+        <form id="cnt-form" class="cnt-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
             <hr>
             <label for="name">Your name:</label>
             <input type="text" name="name" placeholder="John" required>
