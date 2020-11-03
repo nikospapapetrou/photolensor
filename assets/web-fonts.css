@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Public Sans";
-  src: url('/assets/webfonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/webfonts/PublicSans-VariableFont.ttf') format('truetype');
   font-style: italic;
   font-display: swap;
 }
@@ -21,7 +21,7 @@
 
 @font-face {
   font-family: 'Bitter';
-  src: url('C:/xampp/htdocs/learnwordpress/wp-content/themes/Photolensor/assets/webfonts/Bitter-VariableFont.ttf') format('truetype');
+  src: url('/assets/webfonts/Bitter-VariableFont.ttf') format('truetype');
   font-display: swap;
   
 }
@@ -34,6 +34,7 @@
 
 @font-face {
   font-family: "Work Sans";
-  src: url('/assets/webfonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+  src: url('/WorkSans-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
   font-display: swap;
 }

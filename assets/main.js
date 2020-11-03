@@ -56,16 +56,18 @@ document.addEventListener("click", event => {
 // Submit Form
 
 myForm.addEventListener('submit', (e) => {
-
+  
   e.preventDefault();
-  console.log('form has submitted');
-
-
-  let request = new XMLHttpRequest();
-  request.open('post', 'ajaxurl', true);
-  console.log(request);
-
-  request.send(new FormData(myForm));
-  console.log(request);
+  
+  fetch('ajaxurl', {
+    method: 'post',
+    body: new URLSearchParams(new FormData(myForm))
+  }).then(function (response) {
+    return response.text();
+  }).then(function (text) {
+    console.log(text);
+  });
+  
+  
 
 });
