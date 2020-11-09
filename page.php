@@ -6,14 +6,8 @@
 
 <?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-<?php endwhile; else: ?>
-
-  <?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-<?php endif; ?>
+<?php endwhile; endif; ?>
 
 </main>
-
-<h1>page-php</h1>
 
 <?php get_footer(); ?>

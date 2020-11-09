@@ -4,6 +4,7 @@
 
 <?php get_header(); ?>
 
+<body <?php body_class( 'about-us-page' ); ?>>
 
  <div class="container-banner">
     <h2 class="about-us">Welcome</h2>
@@ -18,7 +19,7 @@
   </div>
 </div>
 
-  
+</body> 
 
 
 

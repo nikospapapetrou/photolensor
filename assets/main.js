@@ -46,7 +46,7 @@ document.addEventListener("click", event => {
   // next close every dropdown
   for (let dd of dropup) dd.classList.toggle("open", false);
   // then if a link was clicked, open the associated dropdown, BUT only if not open before
-  if (!wasOpen && event.target.matches(".mb-menu a") && body.clientWidth <= 630) {
+  if (!wasOpen && event.target.matches(".mb-menu a") && body.clientWidth <= 640) {
     event.target.nextElementSibling.classList.toggle("open");
   }
   /*  console.log(event.target); */
@@ -59,7 +59,7 @@ myForm.addEventListener('submit', (e) => {
   
   e.preventDefault();
   
-  fetch('ajaxurl', {
+  fetch('url?action=send_message_form', {
     method: 'post',
     body: new URLSearchParams(new FormData(myForm))
   }).then(function (response) {
@@ -68,6 +68,4 @@ myForm.addEventListener('submit', (e) => {
     console.log(text);
   });
   
-  
-
 });

@@ -71,7 +71,7 @@ function Photolensor_get_post_navigation() {
   //endif;
 }
 
-function add_comment_js(){
+ function add_comment_js(){
   if (!is_admin()){
       if (!is_page() AND is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
         wp_enqueue_script( 'comment-reply' );
@@ -80,4 +80,18 @@ function add_comment_js(){
   }
   add_action('get_header', 'add_comment_js');
 
-?>
+
+
+/*   //Cancel Reply Link
+  function my_remove_comment_reply_link($link) {
+    return '';
+}
+add_filter('cancel_comment_reply_link', 'photolensor_remove_comment_reply_link', 10);
+
+// Add the comment reply button to the end of the comment form.
+// Remove the my_remove_comment_reply_link filter first so that it will actually output something.
+function my_after_comment_form($post_id) {
+    remove_filter('cancel_comment_reply_link', 'photolensor_remove_comment_reply_link', 10);
+    cancel_comment_reply_link('Cancel reply');
+}
+add_action('comment_form', 'my_after_comment_form', 99);  */

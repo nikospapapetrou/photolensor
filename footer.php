@@ -12,8 +12,9 @@
 
 <form class="newsletter">
     <label for="email">Email in New Articles:</label>
+    <input class="newsletter__input" type="text" name="name" placeholder="John">
     <input class="newsletter__input" type="email" name="email" placeholder="JohnLock@mail.com">
-    <button class="newsletter__button hvr-buzz-out" type="submit">Submit</button>
+    <button class="newsletter__button hvr-buzz-out" type="submit">Subscribe</button>
 
 </form>
 

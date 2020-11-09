@@ -5,11 +5,18 @@
     <section class="bg-posts__wrapper">
 
       <header class="bg-posts__header">
-        <?php the_post_thumbnail(); ?>
         <?php the_title('<h1>', '</h1>'); ?>
+        <?php the_post_thumbnail(); ?>
 
-        <p><?php esc_html_e( 'Author: ' ) ?><?php the_author_posts_link(); ?></p>
-        <p><date><?php the_date(); ?></date></p>
+        <div class="meta-information">
+            <p>
+             <?php esc_html_e( 'Author: ' ) ?>
+             <?php the_author_posts_link(); ?>
+             <date>
+               <?php the_date(); ?>
+              </date></p>
+      </div>
+        
 
       </header>
 
@@ -18,6 +25,11 @@
         <div>
           <p><?php the_content(); ?></p> 
         </div>
+
+        <footer>
+          <mark><?php the_category() ?></mark>
+          <mark><?php the_tags() ?></mark>
+        </footer>
 
       </main>
 

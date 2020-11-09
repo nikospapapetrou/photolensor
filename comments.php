@@ -4,7 +4,7 @@
  *
  * The area of the page that contains comments and the comment form.
  *
- * @package WordPress
+ * @package Photolensor
  * @subpackage Photolensor
  * @since Photolensor 1.0
  */
@@ -24,9 +24,33 @@ if ( post_password_required() )
     //We have comments
   ?>
 
-  
-    <h2 class="comments-title">
+<?php 
 
+$args = [
+           'fields'               => [
+           'author'               => '<label for="author">Name: *</label><input id="author" name="author" type="text" value="" size="30" maxlength="245" placeholder="John Lock" required="required">',
+           'email'                => '<label for="email">Email: *</label><input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" placeholder="johnlock@gmail.com" required="required">',
+           
+         ], 
+          'format'                => 'html5',
+          'submit_field'          => '<section class="button-choices"><button class="form-submit">%1$s %2$s</button></section>', 
+          'comment_field'         => '<label for="textarea">Your Comment: *</label><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"  placeholder="Your comment here..." required="required"></textarea>',
+          'title_reply_before'    =>  '<h3 id="reply-title" class="comment-reply-title">',
+          'title_reply_after'     => '</h3>',
+          'cancel_reply_before'   => '</form>',
+          
+          /* 'cancel_reply_after'  =>   */
+
+
+];
+
+  comment_form( $args ); 
+
+?>
+
+   <!-- starting comment list -->
+    <h2 class="comments-title">
+        hello
       <?php 
         printf(
           esc_html( _nx( 'One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'Photolensor') ),
@@ -75,11 +99,6 @@ if ( post_password_required() )
     endif;
   ?>
 
-  <?php 
-  
-    comment_form(); 
-  
-  ?>
+
 
 </div><!-- comments-area -->
- 
