@@ -1,4 +1,4 @@
-/* 1. General Styles */
+/* 1. VARIABLES */
 
 :root {
   /* colors */
@@ -8,7 +8,7 @@
   --body-bg-color: #f3f3f3;
   --btn-color: #af0000;
   --btn-color-hover: #801907;
-  --color-meta: #e7e7e7;
+  --color-meta: #fdfdfd;
 
   /*  search bar color */
   --search-bar-color: #838b94;
@@ -26,7 +26,7 @@
   --bp-large: 67;
 }
 
-/* ===== general styles ===== */
+/* 2. ===== GENERAL STYLES ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -82,15 +82,15 @@ a {
   color: var(--main-txt-color);
 }
 
-/* 1. General Styles End */
+/* 2. General Styles End */
 
 /* 
 ==========================================
-  --- main header and navigation bar styles----
+ 3. --- main header and navigation bar styles----
 ==============================================
 */
 
-/* ===== top mobile header with only logo ===== */
+/* 3.1 ===== top mobile header with only logo ===== */
 .mb-header {
   position: fixed;
   top: 0;
@@ -119,7 +119,6 @@ a {
   bottom: 0;
   font-family: var(--main-font-family);
   font-size: 12px;
-  font-weight: 600;
   display: flex;
   justify-content: center;
   z-index: 1000;
@@ -248,10 +247,9 @@ a {
 /* search form styles ends here */
 
 /* ==========================================
-  --- main header and navigation bar styles----
+  ---3.1 main header and navigation bar styles----
 ==============================================*/
-
-/* ----------------style for the hereO area -------------- */
+/* 3.2  === HERO AREA === */
 .hero-area {
   grid-area: hero-area;
   display: -ms-grid;
@@ -280,9 +278,9 @@ a {
   font-size: 1.125rem;
   font-variation-settings: "wght" 500;
 }
-/* ----------------style for the hereO area ENDS-------------- */
+/* --3.2 end-style for the hereO area ENDS-------------- */
 
-/* ----------------style for ANIMATION -------------- */
+/* 3.3 === WAVE ANIMATION === */
 #wave {
   width: 100%;
   height: auto;
@@ -293,7 +291,7 @@ a {
 }
 /* ----------------style for ANIMATION ENDS-------------- */
 
-/* ----------------style for MAIN AREA area -------------- */
+/*  3.4 === MAIN AREA === */
 
 .main-content {
   grid-area: main;
@@ -358,12 +356,12 @@ a {
   width: 15rem;
   height: auto;
 }
-/* ----------------style for MAIN AREA area ENDS-------------- */
+/* 3.4 style for MAIN AREA area ENDS */
 .animation-bottom {
   grid-area: animation-bottom;
 }
 
-/* ----------------style for GALLERY area -------------- */
+/* --3.5 === GALLERY === */
 .gallery {
   grid-area: gallery;
   background-color: var(--third-bg-color);
@@ -381,7 +379,7 @@ a {
 }
 /* ----------------style for GALLERY area ENDS-------------- */
 
-/* ----------------style for FOOTER -------------- */
+/* --3.6 === FOOTER === */
 .icon-moon {
   width: 1.375rem;
   height: 1.375rem;
@@ -395,16 +393,17 @@ a {
 
 .main-footer {
   grid-area: footer;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   width: 100%;
   background: var(--second-bg-color);
   color: white;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  grid-auto-flow: row dense;
+  grid-row-gap: 30px;
   justify-items: center;
   align-items: center;
-  height: 18.75rem;
+  height: 27.75rem;
+  
 }
 
 .main-footer * {
@@ -425,12 +424,18 @@ a {
   margin-bottom: 1.25rem;
 }
 
+.tooltip-email, .tooltip-fb, .tooltip-in {
+  display: none;
+}
+
 .newsletter {
-  height: 5.9375rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 10px;
+  justify-content: center;
+  justify-items: center;
   align-items: center;
-  justify-content: space-between;
+  width: 100%;
 }
 
 .newsletter label {
@@ -442,10 +447,10 @@ a {
   padding: 0.1875rem;
   background: #e6e6e6;
   border-style: Solid;
-  width: 12.5rem;
   height: 1.875rem;
   border-radius: 0.1875rem;
   color: #000;
+  min-width: 1.25rem;
 }
 
 .newsletter__input:hover,
@@ -474,12 +479,17 @@ a {
 
 .bloginfo {
   display: flex;
+  flex-direction: column;
 }
 
 .copyright {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+}
+
+.copyright p {
+  margin-bottom: 0;
 }
 
 .icon-copyright {
@@ -503,7 +513,7 @@ a {
 
 /* 
 =======================
-      ABOUT US 
+    4.  ABOUT US 
 =======================
 */
 
@@ -557,7 +567,7 @@ a {
 
 /* 
 =======================
-       Contact US 
+       5. CONTACT US 
 =======================
 */
 
@@ -640,34 +650,38 @@ textarea {
 =======================
 */
 
-/*
-
- home.php
- 
- */
+/* 6. === HOME.PHP === */
 
 .bg-posts {
-  display: grid;
-  justify-content: center;
-  margin: 60px 0;
-  padding: 20px 0;
+  margin-top: 60px;
 }
 
-.bg-posts-container h1,
-.bg-posts-container h2,
-.bg-posts-container h3,
-.bg-posts-container p
- {
-  color: var(--second-txt-color);
+.bg-posts-container {
+  display: grid;
+  justify-content: center;
+}
+
+.bg-posts__header p {
+  margin: 4px 0;
+}
+
+.bg-posts__header p,
+.bg-posts__header p:not(:first-child) a {
+  color: var(--color-meta);
+}
+
+.bg-posts__meta-inf {
+  display: flex;
+  flex-direction: column;
 }
 
 .bg-articles {
-  padding: 40px 0;
+  padding: 20px 0;
   margin: 20px 10px;
-  background: #d8d9dd;
-  max-width: 500px;
-  border-radius: 5%;
-  color: var(--second-txt-color);
+  background: #5d6069;
+  max-width: 400px;
+  border-radius: 2%;
+  color: var(--main-txt-color);
 }
 
 .bg-posts__wrapper {
@@ -687,7 +701,6 @@ textarea {
   padding: 7px;
   border-radius: 20px;
   justify-self: end;
-  margin-top: 20px;
   border: none;
 }
 
@@ -700,33 +713,39 @@ textarea {
   display: grid;
 }
 
-/* home php*/
-
-/* home.php all the posts */
-
 .bg-posts button a {
   font-variation-settings: "wght" 600;
 }
-/* home.php all the posts */
 
-/* single php  */
+/* 7. === SINGLE PHP ===  */
+
 
 .single-post {
-  display: grid;
-  justify-content: center;
-  margin: 40px 0;
-  padding: 10px 0;
+  margin-top: 20px;
 }
 
-.single-post__content {
-  padding: 40px;
-  margin: 20px 10px;
-  max-width: 700px;
+.single-post h1 {
+  font-size: 20px;
 }
 
-.single-post__content p * {
+.single-post p {
+  font-size: 12px;
+}
+
+.single-post__wrapper {
+  width: 90%;
+}
+
+
+.single-post__wrapper * {
   color: var(--second-txt-color);
 }
+
+.single-post__container {
+  display: grid;
+  justify-items: center;
+}
+
 
 .wp-post-image {
   width: 100%;
@@ -735,13 +754,16 @@ textarea {
 
 /* single php end */
 
-/* 12. Comments */
+/* 8. COMMENTS */
 
-/* Comment Headers ----------------------------- */
 
-.comments-area {
+.comments-area { /* Comment Headers */
+  display: grid;
+  justify-content: center;
   border-top: 4px solid grey;
   margin-top: 30px;
+  margin-bottom: 500px;
+  padding-bottom: 100px;
   color: black;
   width: 90%;
   margin: auto;
@@ -751,9 +773,13 @@ textarea {
   color: var(--second-txt-color);
 }
 
+.comments-area p {
+  margin: 0;
+}
+
 .comment-reply-link {
-  color: black;
-  background: olivedrab;
+  color: #000;
+  background: #6b8e23;
   border-radius: 5px;
   padding: 5px;
 }
@@ -875,7 +901,7 @@ textarea {
   --- main header and navigation bar styles----
 ==============================================*/
 
-  /* first breakpoint HEADER 630 px styles */
+  /* 3.1.a  ==first breakpoint HEADER 630 px styles */
   .mb-header {
     display: none;
   }
@@ -928,7 +954,7 @@ textarea {
 
   /* first breakpoint HEADER 630 px styles END */
 
-  /* ----------------style for the hereO area 
+  /* --3.2.b--------style for the hereO area 
   -------------- */
   .hero-area {
     height: 25rem;
@@ -946,10 +972,7 @@ textarea {
   }
   /* ----------------style for the hereO area ENDS-------------- */
 
-  /* ----------------style for ANIMATION -------------- */
-  /* ----------------style for ANIMATION ENDS-------------- */
-
-  /* ----------------style for MAIN AREA first BK-------------- */
+  /* 3.4.a----------style for MAIN AREA first BK-------------- */
   .garry {
     width: 18.75rem;
   }
@@ -972,7 +995,7 @@ textarea {
 
   /* ----------------style for MAIN AREA first BK ENDS-------------- */
 
-  /* ----------------style for GALLERY area -------------- */
+  /* -3.5.a----------style for GALLERY area -------------- */
   .gallery {
     padding: 12.5rem 1.25rem;
     display: grid;
@@ -1016,7 +1039,7 @@ textarea {
   }
   /* ----------------style for GALLERY area ENDS-------------- */
 
-  /* ----------------style for FOOTER -------------- */
+  /* --3.6.a------------style for FOOTER -------------- */
 
   .main-footer {
     margin-bottom: 0;
@@ -1027,24 +1050,105 @@ textarea {
     height: 1.75rem;
   }
 
-  .newsletter {
-    height: 3.125rem;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
   .newsletter__input {
     margin: 0 0.625rem;
+    width: 19rem;
   }
 
   .newsletter__button {
-    width: 7.5rem;
+    width: 19rem;
   }
-  /* ----------------style for FOOTER ENDS-------------- */
+
+  /* === TOOLTIPS === */
+
+  .tooltip-email, .tooltip-fb, .tooltip-in {
+    display: block;
+  }
+/* FACEBOOK TOOLTIP */
+#facebook {
+  position: relative;
+}
+
+#facebook .tooltip-fb {
+  visibility: hidden;
+  width: 120px;
+  background-color: #0000006e;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  left: -120px;
+  bottom: 0;
+  transition-timing-function: ease-in-out;
+  transition-delay: 200ms;
+  transition-duration: 200ms;
+}
+
+#facebook:hover .tooltip-fb {
+  visibility: visible;
+}
+
+/* Instagram tooltip */
+#instagram {
+  position: relative;
+}
+
+#instagram .tooltip-in {
+  visibility: hidden;
+  width: 120px;
+  background-color: #0000006e;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  right: -50px;
+  bottom: -37px;
+  transition-timing-function: ease-in-out;
+  transition-delay: 200ms;
+  transition-duration: 200ms;
+}
+
+#instagram:hover .tooltip-in {
+  visibility: visible;
+}
+
+/* EMAIL TOOLTIP */
+
+#social-email {
+  position: relative;
+}
+
+#social-email .tooltip-email {
+  visibility: hidden;
+  width: 120px;
+  background-color: #0000006e;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  right: -135px;
+  bottom: 0;
+  transition-timing-function: ease-in-out;
+  transition-delay: 200ms;
+  transition-duration: 200ms;
+}
+
+#social-email:hover .tooltip-email {
+  visibility: visible;
+}
 
   /*
 ================
- 1st BR ABOUT US
+ 4.a ABOUT US
 ================
  */
 
@@ -1077,34 +1181,26 @@ textarea {
 ================
  */
 
-  /* contact us 1breakboint */
+  /* 5.a contact us 1breakboint */
   .cnt-form {
     max-width: 50%;
   }
   /* contact us 1breakboint */
 
-  /* 
-1st home.php
- */
+  /*   6.a === HOME PHP === */
 
   .bg-posts {
-    width: 80%;
-    margin: auto;
-    margin-top: 100px;
-    padding: 80px 0;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    justify-items: center;
+    margin-top: 130px;
   }
 
-  /* 
-1st home php
- */
+  /* 7.a 1bk single-post.php */
+
+
 }
 
 @media screen and (min-width: 67em) {
-  /* ==========================================
-  --- main header and navigation bar styles----
-==============================================*/
-  /* HEADER SECOND BREAKPOINT */
+  /* 3.1.b.   HEADER SECOND BREAKPOINT */
   .main-header {
     height: 50px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1147,7 +1243,7 @@ textarea {
   }
   /* HEADER END SECOND BREAKPOINT */
 
-  /* ----------------style SECOND BREAKPOINT hereO area -------------- */
+  /* 3.2.b  ====HERO AREA====   */
   .hero-area {
     height: 34.375rem;
     background-position: right 70%;
@@ -1163,10 +1259,7 @@ textarea {
 
   /* ----------------style SECOND BREAKBOINT hereO area ENDS-------------- */
 
-  /* ----------------style for ANIMATION -------------- */
-  /* ----------------style for ANIMATION ENDS-------------- */
-
-  /* ----------------style for MAIN second BK area -------------- */
+  /* 3.4.b.   MAIN AREA    */
 
   .main-content {
     grid-column-gap: 20px;
@@ -1181,7 +1274,7 @@ textarea {
   }
   /* ----------------style for MAIN AREA second BK ENDS-------------- */
 
-  /* ----------------style for GALLERY area -------------- */
+  /* 3.5.b.   GALLERY     */
   .gallery {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -1211,26 +1304,23 @@ textarea {
   }
   /* ----------------style for GALLERY area ENDS-------------- */
 
-  /*   about us 2 br */
+  /*  4.b. ABOUT US  */
   .nikos-container p {
     width: 70%;
   }
 
-  /* contact us second breakpoint */
+  /* 5.b. CONTACT US  */
   .cnt-form {
     max-width: 35%;
   }
-  /* contact us second breakpoint */
 
-  /*
-2nd breakboint home.php 
-*/
+  /* 6.b. HOME.PHP  */
   .bg-posts {
+    display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
     margin-top: 50px;
   }
 
-  /*   
-2nd breakboint home.php
-*/
+  /*7.b. SINGLE.PHP */
+
 }

@@ -417,3 +417,15 @@ class Custom_Walker_Comment extends Walker_Comment {
 			<?php
 	}
 }
+
+add_action('comment_form', 'add_input_privacy');
+function add_input_privacy() {
+    $commenter = wp_get_current_commenter();
+    echo '<p class="comment-form-author"><input type="checkbox" style="..." name="privacy" value="1"/>I agree...</p>';
+}
+
+function my_after_comment_form($post_id) {
+	remove_filter('cancel_comment_reply_link', 'ndic_remove_comment_reply_link', 10);
+	cancel_comment_reply_link('Cancel reply');
+}
+add_action('comment_form', 'my_after_comment_form', 99);

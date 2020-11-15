@@ -8,8 +8,9 @@
  ================
  */
 
- wp_nonce_field( 'photolensor_save_user_contact_form', 'photolensor-contact-nonce-field' ); 
+ // nonce
 
+  //Ajax Hooks
  add_action( 'wp_ajax_nopriv_photolensor_save_user_contact_form', 'photolensor_save_contact');
  add_action('wp_ajax_photolensor_save_user_contact_form', 'photolensor_save_contact' );
 
@@ -29,7 +30,7 @@
   //do form stuff
  /*  wp_send_json_success($_POST); */
 
-
+    // Insert Informations in Custom Post Type in the Admin area
   $args = array(
     'post_title'        => $title,
     'post_content'      => $message,

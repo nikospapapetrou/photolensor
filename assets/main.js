@@ -56,12 +56,14 @@ document.addEventListener("click", event => {
 // Submit Form
 
 myForm.addEventListener('submit', (e) => {
-  
   e.preventDefault();
-  
-  fetch('url?action=send_message_form', {
+  fetch( jsforwp_globals.ajax_url, {
     method: 'post',
-    body: new URLSearchParams(new FormData(myForm))
+    body: new URLSearchParams({
+      action: 'photolensor_save_user_contact_form',
+      _ajax_nonce: jsforwp_globals.photolensor_save_user_contact_form
+    }),
+    
   }).then(function (response) {
     return response.text();
   }).then(function (text) {
@@ -69,3 +71,5 @@ myForm.addEventListener('submit', (e) => {
   });
   
 });
+
+ /* 'new FormData(myForm) */

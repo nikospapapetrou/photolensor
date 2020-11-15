@@ -7,15 +7,13 @@
 <body <?php body_class( 'about-us-page' ); ?>>
 
  <div class="container-banner">
-    <h2 class="about-us">Welcome</h2>
+    <h2 class="about-us"><?php the_title() ?></h2>
  </div>
 
 <div class="nikos-wrapp">
   <div class="nikos-container">
     <img class="nikos" src = '<?php bloginfo('template_url'); ?>/assets/images/nikos-papapetrou.jpg' alt="Nikos Papapetrou">
-    <p class="about-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo similique praesentium perferendis
-      tempore doloremque
-      nisi autem incidunt assumenda, nulla quod maiores fuga velit vitae in id a, officiis corrupti minima</p>
+    <div class="about-p"><?php the_content() ?></div>
   </div>
 </div>
 

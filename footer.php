@@ -4,9 +4,9 @@
 <div class="social-media">
     <p class="social-media__text">Contact Us:</p>
     <div class="social-media__icons">
-        <a href="https://www.facebook.com/"><img class="icon-moon" src= '<?php bloginfo('template_url'); ?> /assets/images/Social-Icons/facebook.svg' alt="Facebook Link"></a>
-        <a href=""><img src= '<?php bloginfo('template_url'); ?>/assets/images/Social-Icons/instagram.svg' alt="Link to Instagram" class="icon-moon"></a>
-        <a href=""><img src= '<?php bloginfo('template_url'); ?>/assets/images/Social-Icons/email.svg' alt="Email Adress" class="icon-moon"></a>
+        <a id="facebook" href="https://www.facebook.com/"><img class="icon-moon" src= '<?php bloginfo('template_url'); ?> /assets/images/Social-Icons/facebook.svg' alt="Facebook Link"><span class="tooltip-fb">Facebook</span></a>
+        <a id="instagram" href=""><img id="instagram" src= '<?php bloginfo('template_url'); ?> /assets/images/Social-Icons/instagram.svg' alt="Link to Instagram" class="icon-moon"><span class="tooltip-in">Instagram</span></a>
+        <a id="social-email" href="mailto:nikospap1991@hotmail.gr"><img src= '<?php bloginfo('template_url'); ?>/assets/images/Social-Icons/email.svg' alt="Email Adress" class="icon-moon"><span class="tooltip-email">Email Us</span></a>
     </div>
 </div>
 
@@ -22,13 +22,13 @@
     <div class="info">
         <a class="info__text" href="<?php echo site_url( '/about' ) ?>">About</a>
         <a class="info__text" href="<?php echo site_url( '/privacy-policy' ) ?>">Privacy</a>
-    </div>
-
-    
-</section>
+    </div> 
     <div class="copyright">
         <p>photolensor <?php echo get_the_date( 'Y' ); ?> &copy;</p>
     </div>
+</section>
+
+    
 </footer>
 
 <!--  footer ends here -->

@@ -6,11 +6,11 @@
 
 <section class="cnt-container">
         <div class="hr">
-            <h2>Write us</h2>
+            <?php the_title('<h2>', '</h2>') ?>
             
         </div>
 
-        <form id="cnt-form" class="cnt-form" action="" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+        <form id="cnt-form" class="cnt-form" action="" method="post">
             <hr>
             <label for="name">Your name:</label>
             <input type="text" name="name" placeholder="John" required>
@@ -20,6 +20,8 @@
             <textarea name="message" id="#message" placeholder="Your message here..."></textarea>
             <input type="submit" id="cn-btn" name="submit" value="Submit">
         </form>
+
+    
     </section>
   
 

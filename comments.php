@@ -30,18 +30,14 @@ $args = [
            'fields'               => [
            'author'               => '<label for="author">Name: *</label><input id="author" name="author" type="text" value="" size="30" maxlength="245" placeholder="John Lock" required="required">',
            'email'                => '<label for="email">Email: *</label><input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" placeholder="johnlock@gmail.com" required="required">',
-           
          ], 
-          'format'                => 'html5',
-          'submit_field'          => '<section class="button-choices"><button class="form-submit">%1$s %2$s</button></section>', 
+
           'comment_field'         => '<label for="textarea">Your Comment: *</label><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"  placeholder="Your comment here..." required="required"></textarea>',
+          'submit_field'          => '<section class="button-choices"><button class="form-submit">%1$s %2$s</button>', 
           'title_reply_before'    =>  '<h3 id="reply-title" class="comment-reply-title">',
           'title_reply_after'     => '</h3>',
-          'cancel_reply_before'   => '</form>',
-          
-          /* 'cancel_reply_after'  =>   */
-
-
+          'cancel_reply_before'   => '</section>',
+          'format'                => 'html5',
 ];
 
   comment_form( $args ); 
@@ -74,13 +70,14 @@ $args = [
             'type'        => 'all',
             'avatar_size' => 32,
             'echo'        => true,
-
           );
+
           wp_list_comments( $args );
+
         ?>
 
       </ol>
-
+     
       <?php 
         Photolensor_get_post_navigation();
       ?>    
