@@ -1,48 +1,47 @@
 <?php
 
 /*
- @packgaege Photolensor
+ @packgage Photolensor
 
  ================
   AJAX FUNCTIONS
  ================
  */
 
- // nonce
+
 
   //Ajax Hooks
  add_action( 'wp_ajax_nopriv_photolensor_save_user_contact_form', 'photolensor_save_contact');
- add_action('wp_ajax_photolensor_save_user_contact_form', 'photolensor_save_contact' );
+ add_action( 'wp_ajax_photolensor_save_user_contact_form', 'photolensor_save_contact' );
 
  function photolensor_save_contact() {
 
-  $title = wp_strip_all_tags($_POST["name"]);
+  $name = wp_strip_all_tags($_POST["name"]);
   $email = wp_strip_all_tags($_POST["email"]);
   $message = wp_strip_all_tags($_POST["message"]);
  
 
-  if( ! isset($_POST['photolensor-contact-nonce-field'] ) || ! wp_verify_nonce( $_POST['photolensor-contact-nonce-field'], 'photolensor_save_user_contact_form' ) ) {
+/*   if( ! isset($_POST['photolensor-contact-nonce-field'] ) || ! wp_verify_nonce( $_POST['photolensor-contact-nonce-field'], 'photolensor_save_user_contact_form' ) ) {
 
     wp_send_json_error( [ 'message' => 'Something Wrong'] );
 
-  }
+  } */
 
   //do form stuff
  /*  wp_send_json_success($_POST); */
 
     // Insert Informations in Custom Post Type in the Admin area
   $args = array(
-    'post_title'        => $title,
+    'post_title'        => $name,
     'post_content'      => $message,
     'post_author'       => 1,
+    'post_status'       => 'publish',
     'post_type'         => 'photolensor-contact',
     'meta_input'        => array(
-      'contact_email'   => $email
+    '_contact_email_value_key'     => $email
     )
   );
 
   $postId = wp_insert_post( $args );
-
-
-  die();
+   wp_die();
  }

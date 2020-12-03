@@ -17,7 +17,7 @@
 }
 
 @font-face {
-  font-family: 'Bitter';
+  font-family: 'Bitter Italic';
   src: local('/assets/webfonts/Bitter-VariableFont.ttf') format('truetype');
   src: url('http://localhost/learnwordpress/wp-content/themes/Photolensor/assets/webfonts/Bitter-Italic-VariableFont.ttf') format('truetype');
   font-style: italic;
@@ -33,7 +33,7 @@
 }
 
 @font-face {
-  font-family: 'Work Sans';
+  font-family: 'Work Sans Italic';
   src: url('http://localhost/learnwordpress/wp-content/themes/Photolensor/assets/webfonts/WorkSans-Italic-VariableFont_wght.ttf') format('truetype');
   font-style: italic;
   font-display: swap;

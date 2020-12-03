@@ -1,5 +1,6 @@
 <?php 
 
+// Add  CSS
 function Photolensor_enqueue_styles() {
 
 wp_enqueue_style( 'custom-fonts', get_stylesheet_directory_uri() . 
@@ -27,7 +28,7 @@ function Photolensor_enqueue_scripts() {
   '/assets/main.js', [], time(), true );
   wp_localize_script( 'main-js', 'jsforwp_globals', array(
     'ajax_url'  => admin_url( 'admin-ajax.php' ),
-    'nonce'     => wp_create_nonce( 'photolensor_save_user_contact_form' )
+    /* 'nonce'     => wp_create_nonce( 'photolensor_save_user_contact_form' ) */
   ) );
 }
 

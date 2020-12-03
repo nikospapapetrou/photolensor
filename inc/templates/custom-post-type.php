@@ -52,6 +52,7 @@ function photolensor_contact_post_type() {
 /* Adding Admin Columns */
 function photolensor_set_contact_columns( $columns ) {
   $newColumns = array();
+  $newColumns['cb'] = '<input type="checkbox" />';
   $newColumns['title'] = 'Full Name';
   $newColumns['message'] = 'Message';
   $newColumns['email'] = 'Email';

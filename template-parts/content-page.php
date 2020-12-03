@@ -1,35 +1,23 @@
+<section class="page-php__container">
+  <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-php__content' ); ?>>
 
-<section class="bg-posts-container">
-    <article  id="post-<?php the_ID(); ?>" <?php post_class( 'single-post__content' ); ?>>
 
-    <section class="bg-posts__wrapper">
 
-      <header class="bg-posts__header">
-    
-        <?php the_title('<h1>', '</h1>'); ?>
+    <header class="page-php__header">
 
-        
+      <?php the_title('<h1>', '</h1>'); ?>
 
-      </header>
+    </header>
 
-      <main class="bg-posts_content">
+    <main class="page-php__content">
 
-        <div>
-          <p><?php the_content(); ?></p> 
-        </div>
+      <div>
+        <p><?php the_content(); ?></p>
+      </div>
 
-      </main>
+    </main>
 
-    </section>
+
 
   </article>
 </section>
-
-
-
-
-
-
-
-
-

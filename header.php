@@ -16,19 +16,19 @@
 
     <!--  mobile header with logo only -->
     <div class="mb-header">
-        <a class="logo-link" href="<?php echo home_url(); ?>"><img class="logo" src = '<?php bloginfo('template_url'); ?>/assets/images/logo.svg' alt = "Garry the Photographer"/>
+        <a class="logo-link" href="<?php echo home_url(); ?>"><img class="logo" src = '<?php bloginfo('template_url'); ?>/assets/images/logo.svg' alt="Photolensor Logo"/>
 </a>
 
     </div>
     <!--  mobile header with logo only ends here -->
 
     <!-- ============ Main Header Starts =================-->
-    <header class="main-header">
+    <header class="main-header" role="navigation">
 
         <!--================= navigation menu start here -->
         <?php
              $args = [
-                 
+                'container_aria_label' => 'navigation',
                'theme_location' => 'main-menu',
                'menu_class'     => 'main-nav__list',
                'container'      => 'nav',

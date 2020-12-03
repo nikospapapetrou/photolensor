@@ -16,6 +16,7 @@ How CSS is being structured
 6. Home.php all Posts
 7. Single.php
 8. Comments section in single.php
+9. Page.php styles
 
 Media queries:
 A to Z for breakpoints ex: 1.a is the first breakpoint
